@@ -58,6 +58,7 @@ public class ProjectsApp {
 						 
 						case 5:
 							deleteProject();
+						break;
 						
 						default:
 						  System.out.println("\n" + selection +  " is not a valid selection. Try again.");
@@ -74,7 +75,10 @@ public class ProjectsApp {
 		}			
 		
 		private void deleteProject() {
+			listProjects();
+			
 			Integer projectId = getIntInput("Enter the ID of the project to delete");
+			
 			projectService.deleteProject(projectId);
 			System.out.println("Project " + projectId + " was deleted successfully.");
 			
